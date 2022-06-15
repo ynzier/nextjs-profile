@@ -5,14 +5,25 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
+    "export": "next export",
     "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.6",
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.0"
+    "framer-motion": "^6.3.11",
+    "glitch-text": "^1.6.1",
+    "next": "^12.1.6",
+    "particles-bg": "^2.5.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-intersection-observer": "^9.2.2",
+    "react-random-reveal": "^2.0.0",
+    "react-redux": "^8.0.2",
+    "react-text-typist": "^1.1.6",
+    "react-tsparticles": "^2.0.6",
+    "tsparticles": "^2.0.6",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.0.0",
@@ -23,8 +34,11 @@
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.18",
+    "autoprefixer": "^10.4.7",
     "jest": "^27.2.0",
     "jest-css-modules-transform": "^4.2.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.2",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.4"
