@@ -20,7 +20,7 @@ const Contact: FunctionComponent = (props: Props) => {
   return (
     <motion.div
       ref={ref}
-      animate={inView ? { x: 0 } : { x: "-100vw" }}
+      animate={inView ? { scale: 1 } : { scale: 0 }}
       transition={{ duration: 1 }}
       className="h-screen w-screen md:h-screen md:w-screen grid grid-rows-6 overflow-hidden p-8 md:p-24 text-neutral-50"
     >
@@ -32,15 +32,25 @@ const Contact: FunctionComponent = (props: Props) => {
       <div className="row-span-5 bg-neutral-800 z-10 text-2xl justify-center items-center flex flex-col gap-4">
         <div className="flex gap-4">
           <FaPhone size={30} />
-          <h2>(+66) 86 541 9870</h2>
+          <a href="tel:+66865419870" className="hover:underline">
+            +668 6541 9870
+          </a>
         </div>
         <div className="flex gap-4">
           <FaLinkedin size={30} />
-          <h2>linkedin.com/in/kntcc</h2>
+          <a
+            href="https://linkedin.com/in/kntcc"
+            className="hover:underline"
+            target="_blank"
+          >
+            linkedin.com/in/kntcc
+          </a>
         </div>
         <div className="flex gap-4">
           <HiMail size={30} />
-          <h2>kkunut.cc@gmail.com</h2>
+          <a href="mailto:kkunut.cc@gmail.com" className="hover:underline">
+            kkunut.cc@gmail.com
+          </a>
         </div>
       </div>
     </motion.div>

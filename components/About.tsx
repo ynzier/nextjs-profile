@@ -27,6 +27,8 @@ const About: FunctionComponent = (props: Props) => {
   useEffect(() => {
     if (inView) {
       document.title = "Kunut Chirdchai | About me";
+      const slug = router.query.slug || [];
+      console.log(slug);
       router.push("/", "/about", { shallow: true });
     }
     return () => {};
