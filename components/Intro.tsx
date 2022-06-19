@@ -7,6 +7,7 @@ import { motion, useAnimation } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { GlitchText } from "glitch-text";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 type Props = {};
 
@@ -47,6 +48,11 @@ const Intro: FunctionComponent = (props: Props) => {
 
   return (
     <>
+      {inView && (
+        <Head>
+          <title>Kunut Chirdchai | Profile</title>
+        </Head>
+      )}
       <div className="p-4 flex overflow-hidden">
         <div className="z-10 md:p-8 bg-white flex flex-col md:flex-row items-center justify-center">
           <motion.div
@@ -59,13 +65,13 @@ const Intro: FunctionComponent = (props: Props) => {
               <div className="bg-red-300 h-1 w-12 mr-4" />
               <p className="text-xl">Hello world, I'm</p>
             </div>
-            <h2 className="text-6xl md:text-8xl text-right font-extrabold">
+            <h2 className="text-6xl md:text-8xl text-right font-bold handwriting">
               <GlitchText theme="blue" text={"Kunut"} />
             </h2>
-            <h2 className="text-6xl md:text-8xl text-right font-extrabold">
+            <h2 className="text-6xl md:text-8xl text-right font-bold handwriting">
               <GlitchText theme="blue" text={"Chirdchai"} />
             </h2>
-            <span className="text-4xl text-teal-300 text-right font-bold">
+            <span className="text-4xl text-teal-300 text-right font-bold handwr">
               <Typewriter
                 options={{
                   strings: ["Software Engineer", "React/NodeJS"],

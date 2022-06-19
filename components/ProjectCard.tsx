@@ -18,7 +18,7 @@ const ProjectCard: FunctionComponent<Props> = ({
   return (
     <motion.div
       ref={viewRef}
-      className="flex flex-col flex-1 items-center py-8 px-12 text-xl overflow-y-scroll xl:overflow-hidden"
+      className="flex flex-col flex-1 items-center py-8 px-12 justify-center overflow-y-scroll xl:overflow-hidden"
       transition={{ duration: 2 }}
     >
       <h2 className="text-2xl font-bold">{cardName}</h2>

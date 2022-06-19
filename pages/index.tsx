@@ -26,6 +26,12 @@ const IndexPage: NextPage = () => {
     <Layout>
       <Head>
         <title>Kunut Chirdchai | Profile</title>
+        <meta name="description" content={`Kunut's Profile.`} />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
+        <meta name="theme-color" content="#fff" />
+        <meta name="viewport" content=".., viewport-fit=cover" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>

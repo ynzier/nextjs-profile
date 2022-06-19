@@ -1,0 +1,7 @@
+{
+  "short_name": "Kunut's Blog",
+  "name": "Kunut Chirdchai's Profile",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "landscape"
+}
