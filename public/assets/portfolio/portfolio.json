@@ -1,0 +1,106 @@
+[
+  {
+    "cardName": "Codesom ERP",
+    "cardDetail": "Enterprise resource planning (ERP) consists of technologies and systems companies use to manage and integrate their core business processes. such as human resources, customer relations management, warehouse management, financial, supply chain and more for Codesom Beverage's Brand.",
+    "img": "/assets/portfolio/codesom_erp.png",
+    "techStack": [
+      "React",
+      "MySQL",
+      "Javascript",
+      "AWS",
+      "NodeJS",
+      "Typescript",
+      "RESTful API",
+      "Ant Design",
+      "Google Maps API"
+    ]
+  },
+  {
+    "cardName": "Codesom POS",
+    "cardDetail": "A Point-of-Sale Application for Codesom Beverage's Brand. This application is a one-point-service for the storefront. All data is connected with others.",
+    "img": "/assets/portfolio/codesom_pos.jpeg",
+    "techStack": [
+      "React Native",
+      "Typescript",
+      "MySQL",
+      "AWS",
+      "NodeJS",
+      "Typescript",
+      "RESTful API",
+      "Expo Dev",
+      "Native Base"
+    ]
+  },
+  {
+    "cardName": "Codesom Online Store",
+    "cardDetail": "An online storefront is a website that allows users to search for, order, and pay for items. Because of their user-friendly API and local support, I chose Lalamove Platform. Their consumers will find it simple to place an order with this website.",
+    "img": "/assets/portfolio/codesom_store.png",
+    "techStack": [
+      "React",
+      "NextJS",
+      "MySQL",
+      "Javascript",
+      "AWS",
+      "NodeJS",
+      "Typescript",
+      "RESTful API",
+      "Ant Design",
+      "Google Maps API",
+      "Lalamove API"
+    ]
+  },
+  {
+    "cardName": "GoGo Care",
+    "cardDetail": "Application to help elderly patients or people who can't even take care of themselves. How will this application help them? So this application will match caregivers who will take care of patients all the way, even home-hospital and hospital-home.",
+    "techStack": ["React", "React Native", "Typescript", "Native Base"],
+    "img": "/assets/portfolio/gogocare.png"
+  },
+  {
+    "cardName": "KL Warranty Management",
+    "cardDetail": "A management system I designed and developed the entire system by myself for my employer. The main purposes of this system are to let employers create and manage their products at a control panel site. Customers can track products by warranty ID through their customer site.",
+    "techStack": [
+      "React",
+      "React Native",
+      "MongoDB",
+      "Javascript",
+      "AWS",
+      "NodeJS"
+    ],
+    "img": "/assets/portfolio/kl-site.png"
+  },
+  {
+    "cardName": "WAX CPU Bank",
+    "cardDetail": "This project is related to smart contract in blockchain technology. Since then, it has taken on a life of its own, with interest coming from many quarters. It's a CPU bank on WAX Chain (wax.io).",
+    "techStack": [
+      "React",
+      "Web3",
+      "Javascript",
+      "AWS",
+      "NodeJS",
+      "DApp",
+      "Solidity",
+      "Smart Contract"
+    ],
+    "img": "/assets/portfolio/waxloan.png"
+  },
+  {
+    "cardName": "NFT Marketplace",
+    "cardDetail": "A NFT Marketplace where users can trade/sell/buy NFT on the Ethereum blockchain. NFTs are non-replicable cryptographic tokens that exist on a blockchain. NFTs can represent physical items such as artwork and real estate.",
+    "techStack": [
+      "React",
+      "Web3",
+      "Javascript",
+      "AWS",
+      "NodeJS",
+      "DApp",
+      "Solidity"
+    ],
+    "img": "/assets/portfolio/nftmarketplace.png"
+  },
+  {
+    "cardName": "Numerical Calculator",
+    "cardDetail": "This is a colleague project that can solve problems numerically and display the results as a graph and table.",
+    "techStack": ["React", "Web3", "Javascript", "AWS", "NodeJS"],
+    "img": "/assets/portfolio/numerjs.png"
+  }
+]

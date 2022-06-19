@@ -43,7 +43,7 @@ const About: FunctionComponent = (props: Props) => {
       <div className="w-screen grid">
         <div className="flex p-12">
           <div className="w-full h-full z-10 md:grid md:grid-cols-2 text-neutral-50">
-            <div className="flex flex-col justify-center bg-neutral-800 md:p-12">
+            <div className="flex flex-col justify-center bg-neutral-800 p-4 md:p-12">
               <div className="flex-row flex items-center">
                 <div className="bg-red-300 h-1 w-6 md:w-12  mr-2 md:mr-4" />
                 <p className="text-lg md:text-4xl font-bold">About me</p>
@@ -74,7 +74,7 @@ const About: FunctionComponent = (props: Props) => {
                 </a>
               </div>
             </div>
-            <div className="flex flex-col justify-center p-12 bg-neutral-300/80 text-neutral-800">
+            <div className="flex flex-col justify-center p-4 md:p-12 bg-neutral-300/80 text-neutral-800">
               <div className="flex-row flex items-center">
                 <div className="bg-red-300 h-1 w-6 md:w-12  mr-2 md:mr-4" />
                 <p className="text-lg md:text-4xl font-bold">My Skills</p>

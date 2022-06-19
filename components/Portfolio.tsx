@@ -2,60 +2,22 @@ import { FunctionComponent, useEffect } from "react";
 import { RandomReveal } from "react-random-reveal";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-import ProjectCard from "components/ProjectCard";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/router";
+import { Pagination } from "swiper";
 import Head from "next/head";
+import "swiper/css";
+import "swiper/css/pagination";
+import { getAllPorts } from "features/portfolio/portfolioSlice";
+import { useSelector } from "react-redux";
+import "react-photo-view/dist/react-photo-view.css";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+
 type Props = {};
-type TSProject = {
-  cardName: string;
-  cardDetail: string;
-  techStack: string[];
-};
-const projects: TSProject[] = [
-  {
-    cardName: "Codesom ERP",
-    cardDetail:
-      "Enterprise resource planning (ERP) consists of technologies and systems companies use to manage and integrate their core business processes. such as human resources, customer relations management, warehouse management, financial, supply chain and more.",
-    techStack: [
-      "React",
-      "React Native",
-      "MySQL",
-      "Javascript",
-      "AWS",
-      "NodeJS",
-      "Typescript",
-      "RESTful API",
-    ],
-  },
-  {
-    cardName: "GoGo Care",
-    cardDetail:
-      "Application to help elderly patients or people who can't even take care of themselves. How will this application help them? So this application will match caregivers who will take care of patients all the way, even home-hospital and hospital-home.",
-    techStack: ["React", "React Native"],
-  },
-  {
-    cardName: "KL Warranty Management",
-    cardDetail:
-      "A management system I designed and developed the entire system by myself for my employer. The main purposes of this system are to let employers create and manage their products at a control panel site. Customers can track products by warranty ID through their customer site.",
-    techStack: [
-      "React",
-      "React Native",
-      "MongoDB",
-      "Javascript",
-      "AWS",
-      "NodeJS",
-    ],
-  },
-  {
-    cardName: "WAX CPU Bank",
-    cardDetail:
-      "This project is related to blockchain technology. Since then, it has taken on a life of its own, with interest coming from many quarters. It's a CPU bank on WAX Chain (wax.io).",
-    techStack: ["React", "Web3", "Javascript", "AWS", "NodeJS"],
-  },
-];
 const Portfolio: FunctionComponent = (props: Props) => {
   const [ref, inView] = useInView();
+  const works = useSelector(getAllPorts);
+
   const router = useRouter();
   useEffect(() => {
     if (inView) {
@@ -65,6 +27,15 @@ const Portfolio: FunctionComponent = (props: Props) => {
 
     return () => {};
   }, [inView]);
+
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return (
+        '<span class="' + className + '">' + works[index].cardName + "</span>"
+      );
+    },
+  };
 
   return (
     <>
@@ -87,18 +58,55 @@ const Portfolio: FunctionComponent = (props: Props) => {
           </p>
         </div>
         <motion.div className="hidden md:flex flex-col w-full col-span-6 overflow-y-scroll bg-neutral-800 z-10">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.cardName}
-              cardName={project.cardName}
-              cardDetail={project.cardDetail}
-              techStack={project.techStack}
-            />
-          ))}
+          <Swiper
+            pagination={pagination}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {works.map((project) => (
+              <SwiperSlide className="p-24" key={project.cardName}>
+                <h2 className="text-2xl font-bold mb-4">{project.cardName}</h2>
+                {project.img !== "" && (
+                  <PhotoProvider maskOpacity={0.5} bannerVisible={false}>
+                    <PhotoView src={project.img}>
+                      <motion.img
+                        initial={{ opacity: 0 }}
+                        animate={inView && { opacity: 1 }}
+                        transition={{ duration: 2 }}
+                        src={project.img}
+                        alt={project.cardName}
+                        loading="lazy"
+                        className="rounded-sm mb-4 object-contain max-h-[400px] w-2/5 hover:scale-110 duration-300"
+                      />
+                    </PhotoView>
+                  </PhotoProvider>
+                )}
+
+                <motion.p
+                  className="mt-4 indent-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2 }}
+                >
+                  {project.cardDetail}
+                </motion.p>
+                <motion.p
+                  className="mt-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2 }}
+                >
+                  {project.techStack.map((stack, index, entry) =>
+                    entry.length - 1 === index ? stack : stack + " | "
+                  )}
+                </motion.p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </motion.div>
         <motion.div className="md:hidden flex flex-col bg-neutral-800 z-10 w-screen p-12">
           <h2 className="text-2xl uppercase font-bold mb-4">PORTFOLIO</h2>
-          {projects.map((project) => (
+          {works.map((project) => (
             <div key={project.cardName} className="mb-4">
               <p className="font-bold mb-2">{project.cardName}</p>
               <p className="mb-2">
