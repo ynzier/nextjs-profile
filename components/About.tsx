@@ -1,37 +1,39 @@
-import { FunctionComponent, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import { FunctionComponent, useEffect } from "react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { useRouter } from "next/router"
+import Head from "next/head"
 
-type Props = {};
+type Props = {}
 type TSSkill = {
-  name: string;
-  year: number;
-  progress: number;
-};
+  name: string
+  year: number
+  progress: number
+}
 const skill: TSSkill[] = [
-  { name: "React", year: 2, progress: 100 },
-  { name: "NodeJS", year: 2, progress: 100 },
-  { name: "Javascript", year: 2, progress: 100 },
-  { name: "Typescript", year: 1, progress: 50 },
-  { name: "React Native", year: 1, progress: 50 },
-  { name: "Amazon Web Service", year: 2, progress: 100 },
+  { name: "React", year: 6, progress: 100 },
+  { name: "NodeJS", year: 6, progress: 100 },
+  { name: "NextJs", year: 6, progress: 100 },
+  { name: "Typescript", year: 5, progress: 80 },
+  { name: "React Native", year: 3, progress: 50 },
+  { name: "Amazon Web Service", year: 6, progress: 100 },
   { name: "Solidity", year: 1, progress: 50 },
-  { name: "MySQL", year: 2, progress: 100 },
-];
+  { name: "MySQL", year: 6, progress: 100 },
+  { name: "PostgresQL", year: 4, progress: 70 },
+  { name: "DevOps", year: 6, progress: 100 },
+]
 const About: FunctionComponent = (props: Props) => {
-  const [ref, inView] = useInView();
-  const router = useRouter();
+  const [ref, inView] = useInView()
+  const router = useRouter()
 
   useEffect(() => {
     if (inView) {
-      document.title = "Kunut Chirdchai | About me";
-      router.push("/", "/about", { shallow: true });
+      document.title = "Kunut Chirdchai | About me"
+      router.push("/", "/about", { shallow: true })
     }
-    return () => {};
-  }, [inView]);
+    return () => {}
+  }, [inView])
 
   return (
     <>
@@ -106,7 +108,7 @@ const About: FunctionComponent = (props: Props) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About

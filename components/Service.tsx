@@ -1,7 +1,7 @@
-import { FunctionComponent, useEffect } from "react";
-import { motion } from "framer-motion";
-import { RandomReveal } from "react-random-reveal";
-import { useInView } from "react-intersection-observer";
+import { FunctionComponent, useEffect } from "react"
+import { motion } from "framer-motion"
+import { RandomReveal } from "react-random-reveal"
+import { useInView } from "react-intersection-observer"
 import {
   FaReact,
   FaAws,
@@ -10,23 +10,23 @@ import {
   FaCubes,
   FaCode,
   FaSmile,
-} from "react-icons/fa";
-import { MdDesignServices, MdWork } from "react-icons/md";
-import { useRouter } from "next/router";
-import Head from "next/head";
-type Props = {};
+} from "react-icons/fa"
+import { MdDesignServices, MdWork } from "react-icons/md"
+import { useRouter } from "next/router"
+import Head from "next/head"
+type Props = {}
 
 const Service: FunctionComponent = (props: Props) => {
-  const [ref, inView] = useInView();
-  const router = useRouter();
+  const [ref, inView] = useInView()
+  const router = useRouter()
   useEffect(() => {
     if (inView) {
-      document.title = "Kunut Chirdchai | Actions";
-      router.push("/", "/actions", { shallow: true });
+      document.title = "Kunut Chirdchai | Actions"
+      router.push("/", "/actions", { shallow: true })
     }
 
-    return () => {};
-  }, [inView]);
+    return () => {}
+  }, [inView])
 
   return (
     <>
@@ -133,7 +133,7 @@ const Service: FunctionComponent = (props: Props) => {
                 >
                   <FaServer size={"50px"} className="about-icon" />
                   <h4 className="text-xl text-center">
-                    Linux Server Management
+                    Infrastructure and DevOps
                   </h4>
                 </motion.div>
                 <motion.div
@@ -214,7 +214,7 @@ const Service: FunctionComponent = (props: Props) => {
           <div className="items-center flex-col flex">
             <MdWork className="about-icon" />
             <span>
-              <span className="text-3xl">2</span>
+              <span className="text-3xl">6</span>
               <span className="align-top text-teal-300">+</span>
             </span>
             <span className="text-sm">Years of experience</span>
@@ -248,7 +248,7 @@ const Service: FunctionComponent = (props: Props) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Service;
+export default Service

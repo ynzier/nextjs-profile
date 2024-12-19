@@ -1,20 +1,18 @@
-import { FunctionComponent, useRef } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { FunctionComponent, useRef } from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 type Props = {
-  cardName: string;
-  cardDetail: string;
-  techStack: string[];
-  children?: string;
-};
+  cardName: string
+  cardDetail: string
+  techStack: string[]
+}
 
 const ProjectCard: FunctionComponent<Props> = ({
   cardName,
   cardDetail,
   techStack,
-  children,
 }: Props) => {
-  const [viewRef, inView] = useInView();
+  const [viewRef, inView] = useInView()
   return (
     <motion.div
       ref={viewRef}
@@ -43,7 +41,7 @@ const ProjectCard: FunctionComponent<Props> = ({
         </>
       }
     </motion.div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard
